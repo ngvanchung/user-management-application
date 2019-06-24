@@ -12,20 +12,18 @@ namespace UserManagementApplication.Middlewares
     public class ExceptionHandlerMiddleware
     {
         private const string JsonContentType = "application/json";
-        private readonly RequestDelegate nextRequest;
+        private readonly RequestDelegate next;
 
         public ExceptionHandlerMiddleware(RequestDelegate next)
         {
-            nextRequest = next;
+            this.next = next;
         }
-
-        //public Task Invoke(HttpContext context) => InvokeAsync(context);
 
         public async Task InvokeAsync(HttpContext context)
         {
             try
             {
-                await nextRequest.Invoke(context);
+                await next.Invoke(context);
             }
             catch (Exception exception)
             {
