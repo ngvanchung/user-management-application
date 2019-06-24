@@ -1,10 +1,7 @@
 # user-management-application
 
-Open project:
-- Use Visual Studio 2017
-- Open file UserManagementApplication.sln
-
-Test project:
+Project:
+- .Net Core 2.2
 
 Open Postman:
 - Get all users: GET https://localhost:44308/api/users
